@@ -64,7 +64,8 @@ func main() {
 	ctx := nk.NkPlatformInit(win, nk.PlatformInstallCallbacks)
 	atlas := nk.NewFontAtlas()
 	nk.NkFontStashBegin(&atlas)
-	sansFont := nk.NkFontAtlasAddFromFile(atlas, s("assets/FreeSans.ttf"), 18, nil)
+	//sansFont := nk.NkFontAtlasAddFromFile(atlas, s("assets/FreeSans.ttf"), 18, nil)
+	sansFont := nk.NkFontAtlasAddDefault(atlas, 16, nil)
 	nk.NkFontStashEnd()
 	if sansFont != nil {
 		nk.NkStyleSetFont(ctx, sansFont.Handle())
