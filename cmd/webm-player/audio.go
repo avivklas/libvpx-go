@@ -94,7 +94,7 @@ func paCallback(channels int, syncC <-chan time.Duration, aOut <-chan Samples) p
 			return statusComplete
 		}
 
-		out := (*(*[1 << 32]float32)(output))[:int32(sampleCount)*int32(channels)]
+		out := (*(*[1 << 16]float32)(output))[:int32(sampleCount)*int32(channels)]
 		if len(samples.DataInterleaved) > 0 {
 			copy(out, samples.DataInterleaved[:int32(sampleCount)*int32(channels)])
 			return statusContinue
